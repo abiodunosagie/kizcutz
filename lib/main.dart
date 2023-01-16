@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kizcutz/screens/homepage.dart';
+import 'package:kizcutz/screens/onboardingscreen.dart';
 
 void main() {
   runApp(const Kizcutz());
