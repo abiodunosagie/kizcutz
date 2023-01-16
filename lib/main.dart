@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kizcutz/screens/homepage.dart';
 
 void main() {
   runApp(const Kizcutz());
@@ -9,6 +10,9 @@ class Kizcutz extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: OnboardingScreen(),
+    );
   }
 }
