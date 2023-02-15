@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:kizcutz/intro_screens/intro_screen_four.dart';
 import 'package:kizcutz/intro_screens/intro_screen_one.dart';
-import 'package:kizcutz/intro_screens/intro_screen_three.dart';
+
 import 'package:kizcutz/intro_screens/intro_screen_two.dart';
-import 'package:kizcutz/screens/homepage.dart';
+
+import 'package:kizcutz/util/login.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,7 +16,7 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  PageController _controller = PageController();
+  final PageController  _controller = PageController();
 
   //keep track of, if we are on the last page or not.
   bool onLastPage = false;
@@ -28,21 +29,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         PageView(
           onPageChanged: (index) {
             setState(() {
-              onLastPage = (index == 3);
+              onLastPage = (index == 2);
             });
           },
           controller: _controller,
-          children: [
+          children: const [
             IntroScreenOne(),
             IntroScreenTwo(),
-            IntroScreenThree(),
             IntroScreenFour(),
           ],
         ),
         Center(
           child: Container(
-            padding: EdgeInsets.only(
-              top: 623,
+            padding: const EdgeInsets.only(
+              top: 450,
             ),
             child: Text(
               'Kizcutz',
@@ -55,7 +55,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         ),
         Container(
-          alignment: Alignment(
+          alignment: const Alignment(
             0,
             0.90,
           ),
@@ -66,26 +66,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               GestureDetector(
                 onTap: () {
                   _controller.jumpToPage(
-                    3,
+                    2,
                   );
                 },
-                child: Text(
+                child: const Text(
                   'Skip',
                   style: TextStyle(
                     color: Colors.white,
+                    fontSize: 20,
                   ),
                 ),
               ),
               //skp text ending
               SmoothPageIndicator(
-                effect: ExpandingDotsEffect(
+                effect: const ExpandingDotsEffect(
                   dotWidth: 10,
                   dotHeight: 10,
                   dotColor: Colors.white,
                   activeDotColor: Colors.orange,
                 ),
                 controller: _controller,
-                count: 4,
+                count: 3,
               ),
 //   next or done button
               onLastPage
@@ -95,30 +96,32 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return HomePage();
+                              return Login();
                             },
                           ),
                         );
                       },
-                      child: Text(
+                      child: const Text(
                         'Done',
                         style: TextStyle(
                           color: Colors.white,
+                          fontSize: 20,
                         ),
                       ),
                     )
                   : GestureDetector(
                       onTap: () {
                         _controller.nextPage(
-                            duration: Duration(
+                            duration: const Duration(
                               microseconds: 500,
                             ),
                             curve: Curves.easeIn);
                       },
-                      child: Text(
+                      child: const Text(
                         'Next',
                         style: TextStyle(
                           color: Colors.white,
+                          fontSize: 20,
                         ),
                       ),
                     ),

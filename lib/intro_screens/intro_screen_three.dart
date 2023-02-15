@@ -6,10 +6,10 @@ class IntroScreenThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            'assets/images/splash4.jpg',
+            'assets/images/Optimized-splash5.jpg',
           ),
           fit: BoxFit.cover,
         ),

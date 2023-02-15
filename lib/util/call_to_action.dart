@@ -11,10 +11,10 @@ class CallToAction extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: Container(
-        height: 150,
+        height: 120,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Color(0xff3E57B0),
+          color: const Color(0xff3E57B0),
           borderRadius: BorderRadius.circular(
             20,
           ),
@@ -31,7 +31,7 @@ class CallToAction extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(
+            const SizedBox(
               height: 15.0,
             ),
             Text(

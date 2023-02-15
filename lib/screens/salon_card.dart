@@ -1,14 +1,17 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SalonCard extends StatelessWidget {
-  const SalonCard(
+  SalonCard(
       {Key? key,
       required this.companyName,
       required this.companyImagePath,
       required this.openTime,
       required this.distanceAway,
-      required this.rating})
+      required this.rating,
+      required this.openNowOrClosed,
+      // this.images})
       : super(key: key);
 
   final String companyName;
@@ -16,6 +19,8 @@ class SalonCard extends StatelessWidget {
   final String openTime;
   final String distanceAway;
   final String rating;
+  final String openNowOrClosed;
+  List<String>? images;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +66,7 @@ class SalonCard extends StatelessWidget {
                 ),
                 //open now and closed
                 Text(
-                  'Open Now',
+                  openNowOrClosed,
                   style: GoogleFonts.poppins(
                     fontSize: 15.0,
                     fontWeight: FontWeight.w400,
@@ -108,3 +113,4 @@ class SalonCard extends StatelessWidget {
     );
   }
 }
+*/
